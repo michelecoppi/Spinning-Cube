@@ -1,0 +1,74 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #282c34;
+  }
+  
+  .cube {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg);
+    transform-style: preserve-3d;
+    cursor: not-allowed;
+    animation: rotate 5s linear infinite;
+}
+
+  
+
+  .face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2px;
+    background: #000;
+    align-items: center;
+  }
+  
+
+  .square {
+    width: 100%;
+    height: 100%;
+  }
+
+  #m {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+  .red { background-color: red; }
+  .green { background-color: green; }
+  .blue { background-color: blue; }
+  .yellow { background-color: yellow; }
+  .orange { background-color: orange; }
+  .white { background-color: white; }
+  
+  .front  { transform: translateZ(100px); }
+  .back   { transform: rotateY(180deg) translateZ(100px); }
+  .left   { transform: rotateY(-90deg) translateZ(100px); }
+  .right  { transform: rotateY(90deg) translateZ(100px); }
+  .top    { transform: rotateX(90deg) translateZ(100px); }
+  .bottom { transform: rotateX(-90deg) translateZ(100px); }
+  
+  @keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+
+
+  
+ 
